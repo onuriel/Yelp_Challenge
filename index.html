@@ -11924,12 +11924,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">review_data</span> <span class="ow">in</span> <span class="n">review_datas</span><span class="p">:</span>
     <span class="k">break</span>
-<span class="n">review_data</span>
+<span class="n">review_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11942,7 +11942,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -11974,6 +11974,9 @@ div#notebook {
       <th>text</th>
       <th>useful</th>
       <th>user_id</th>
+      <th>text length</th>
+      <th>word length</th>
+      <th>average word length</th>
     </tr>
   </thead>
   <tbody>
@@ -11988,6 +11991,9 @@ div#notebook {
       <td>My girlfriend and I stayed here for 3 nights a...</td>
       <td>0</td>
       <td>cjpdDjZyprfyDG3RlkVG3w</td>
+      <td>1150</td>
+      <td>208</td>
+      <td>4.427885</td>
     </tr>
     <tr>
       <th>1</th>
@@ -12000,6 +12006,9 @@ div#notebook {
       <td>If you need an inexpensive place to stay for a...</td>
       <td>0</td>
       <td>bjTcT8Ty4cJZhEOEo01FGA</td>
+      <td>902</td>
+      <td>169</td>
+      <td>4.153846</td>
     </tr>
     <tr>
       <th>2</th>
@@ -12012,6 +12021,9 @@ div#notebook {
       <td>Mittlerweile gibt es in Edinburgh zwei Ableger...</td>
       <td>0</td>
       <td>AXgRULmWcME7J6Ix3I--ww</td>
+      <td>2416</td>
+      <td>383</td>
+      <td>5.130548</td>
     </tr>
     <tr>
       <th>3</th>
@@ -12024,6 +12036,9 @@ div#notebook {
       <td>Location is everything and this hotel has it! ...</td>
       <td>0</td>
       <td>oU2SSOmsp_A8JYI7Z2JJ5w</td>
+      <td>809</td>
+      <td>164</td>
+      <td>3.878049</td>
     </tr>
     <tr>
       <th>4</th>
@@ -12036,682 +12051,12 @@ div#notebook {
       <td>gute lage im stadtzentrum. shoppingmeile und s...</td>
       <td>0</td>
       <td>0xtbPEna2Kei11vsU-U2Mw</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2016-06-05</td>
-      <td>0</td>
-      <td>GvLmUkjUrOyFH8KFnmT1uw</td>
-      <td>5</td>
-      <td>Erstklassige Lage. Dazu ist alles geschrieben ...</td>
-      <td>0</td>
-      <td>rW8q706dz5-NnXDzMwVkiw</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2015-02-21</td>
-      <td>0</td>
-      <td>lGEl24NGj2HVBJrodeXcjg</td>
-      <td>4</td>
-      <td>Beautiful space, great location, staff rock. T...</td>
-      <td>0</td>
-      <td>yx8vNXUL0D0HS8rUIC7AFA</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2013-07-07</td>
-      <td>0</td>
-      <td>cUgvEy5wj7zYE68v1BzzVg</td>
-      <td>4</td>
-      <td>This is a fairly new property I think. It is a...</td>
-      <td>0</td>
-      <td>zXnH6W74FAJQ7q7b-NuBsA</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>2</td>
-      <td>2013-04-27</td>
-      <td>0</td>
-      <td>FSB_BnvysBgH3JYrbFNcgw</td>
-      <td>4</td>
-      <td>First time at this group of hotels. Pretty new...</td>
-      <td>2</td>
-      <td>c5yp5hxwC1N98MjbV2LyWQ</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2015-04-13</td>
-      <td>0</td>
-      <td>dhl3ZW9aAEX_T7_um5tfaQ</td>
-      <td>4</td>
-      <td>Location location location! \n\nMotel One is j...</td>
-      <td>2</td>
-      <td>xJisL5w4wOgiYLokGMT_IA</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>1</td>
-      <td>2016-11-08</td>
-      <td>1</td>
-      <td>JQJvnM3p-3eML05eKcTgiw</td>
-      <td>4</td>
-      <td>A hotel that has all the basics that you'd nee...</td>
-      <td>1</td>
-      <td>tgV6tsYQ66DZ3LQKvtC6cw</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2015-07-27</td>
-      <td>0</td>
-      <td>6JF4WfHgwYrrdZ2VeYtnFw</td>
-      <td>3</td>
-      <td>Stayed here for two nights, costs was £109 per...</td>
-      <td>1</td>
-      <td>Q-3YCVywc03w56wYtGlKvg</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2014-05-07</td>
-      <td>0</td>
-      <td>fbVYETRuWDw8QnpimpGMpg</td>
-      <td>4</td>
-      <td>Well, i like the idea of Motel One. Always in ...</td>
-      <td>1</td>
-      <td>Cx4UCow0zQgFQOp47RRRaA</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2015-02-26</td>
-      <td>0</td>
-      <td>lobj38NgaokqVseN8_nn6g</td>
-      <td>4</td>
-      <td>I really do love the Germans. This chain is sp...</td>
-      <td>1</td>
-      <td>eqWEgMH-DCP74i82BEAZzw</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>1</td>
-      <td>2015-08-21</td>
-      <td>0</td>
-      <td>ysfjtAWreLoy7um8WTb8xA</td>
-      <td>5</td>
-      <td>Motel One sets the standard for budget hotels....</td>
-      <td>1</td>
-      <td>d0DGZRp6lHXGECJSc_nn-A</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>uYHaNptLzDLoV_JZ_MuzUA</td>
-      <td>0</td>
-      <td>2013-12-07</td>
-      <td>0</td>
-      <td>OF1ToqGAubsWGri5iad15w</td>
-      <td>3</td>
-      <td>Had Continental style breakfast here a short d...</td>
-      <td>1</td>
-      <td>IpLZ7RevQrFPJWYc9Gxymg</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2017-06-03</td>
-      <td>0</td>
-      <td>ByRzJ8rF2KJWLr-cUNU6EA</td>
-      <td>1</td>
-      <td>This place is horrible, we were so excited to ...</td>
-      <td>0</td>
-      <td>kzyLOqiJvyw_FWFTw2rjiQ</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2015-03-26</td>
-      <td>0</td>
-      <td>i5UwUPlQFPLcE8p2gPFwBw</td>
-      <td>4</td>
-      <td>For being fairly "fast" food.. Pei Wei (pronou...</td>
-      <td>1</td>
-      <td>WZXp9-V2dqRRJqhGgRqueA</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>1</td>
-      <td>2012-12-30</td>
-      <td>1</td>
-      <td>EyQyvTTg2jX4or9bB8PC9g</td>
-      <td>5</td>
-      <td>I decided to try it out, I'm celiac and theref...</td>
-      <td>2</td>
-      <td>XylT12exfdLiI_3uDLVIpw</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>1</td>
-      <td>2009-01-12</td>
-      <td>1</td>
-      <td>G-EFA005besj5uHsH0sQFA</td>
-      <td>3</td>
-      <td>I'm not saying Pei Wei is the best asian food ...</td>
-      <td>1</td>
-      <td>Ji9PeffxjwqPLO7pEfSpKQ</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2015-07-11</td>
-      <td>0</td>
-      <td>6PcJSGUBSLjt4VLXos5C4A</td>
-      <td>3</td>
-      <td>Sometimes the food is spot on and delicious an...</td>
-      <td>0</td>
-      <td>TLIWzAJPrET0zX4_vgvLhg</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2015-05-27</td>
-      <td>0</td>
-      <td>PFJmyZD_lNBa_Y3kbX1VvA</td>
-      <td>1</td>
-      <td>Decent customer service but the food was awful...</td>
-      <td>0</td>
-      <td>JZEiTNWBwmv6MOOXYCAaMQ</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>1</td>
-      <td>2015-02-28</td>
-      <td>1</td>
-      <td>_Qv1FQUToLrKMuG6pV4Gzw</td>
-      <td>5</td>
-      <td>Super clean restaurant and friendly staff. FRE...</td>
-      <td>1</td>
-      <td>E56sVQT5-OWfSejJrma8_w</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2010-04-05</td>
-      <td>0</td>
-      <td>s2mlqrFNaPEGtcnEu3EJ4Q</td>
-      <td>4</td>
-      <td>Found this the other night.  It is the PF Chan...</td>
-      <td>0</td>
-      <td>4WYICo4emecA9r7sPYQkBw</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2015-05-22</td>
-      <td>0</td>
-      <td>oiSzZRrbi3y01_wqU528ZQ</td>
-      <td>1</td>
-      <td>The staff here is great and they're nice,  won...</td>
-      <td>0</td>
-      <td>P8mVj7AZwJTFFH5FXbbmUg</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2011-06-15</td>
-      <td>0</td>
-      <td>4BPjRE9VI0HhyZzyyYv0BQ</td>
-      <td>2</td>
-      <td>I had the garlic ginger broccoli chicken and i...</td>
-      <td>1</td>
-      <td>7Y4NEBQqWg7j-TvrQi6UZQ</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2017-03-12</td>
-      <td>0</td>
-      <td>kznHtw1Qido_9GX6sDQPJw</td>
-      <td>5</td>
-      <td>This review is based upon consistency of flavo...</td>
-      <td>0</td>
-      <td>vgZqQqe8cj6SBMH0EqDliw</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>1</td>
-      <td>2016-12-19</td>
-      <td>0</td>
-      <td>HWRTVn3Lc-RwN6udv4WJzQ</td>
-      <td>5</td>
-      <td>I love this place i'd recommend it to anyone !...</td>
-      <td>1</td>
-      <td>O7G_c6wFXSygr82qs0GAcA</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2011-08-10</td>
-      <td>0</td>
-      <td>GiEB_A-m9HuX521WQNbL8w</td>
-      <td>4</td>
-      <td>1st! Place is not closed. There was an issue w...</td>
-      <td>1</td>
-      <td>UG4EKu13JRwzRix6ESINdg</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>jQsNFOzDpxPmOurSWCg1vQ</td>
-      <td>0</td>
-      <td>2013-06-17</td>
-      <td>0</td>
-      <td>GKi4i6qocIgaYcwv1_0zzQ</td>
-      <td>2</td>
-      <td>Definitely not a fan. Coming from Orange Count...</td>
-      <td>0</td>
-      <td>ZZG6yR27lIy3xwUYVgHO7w</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>4736867</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-04-04</td>
-      <td>0</td>
-      <td>HZD4iWgACQELMBZgPKciOA</td>
-      <td>4</td>
-      <td>One of the best ramen ever! Really nice place,...</td>
-      <td>0</td>
-      <td>V26Q2FSvHLg4WHQsjY2MdQ</td>
-    </tr>
-    <tr>
-      <th>4736868</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-04-28</td>
-      <td>0</td>
-      <td>plg7kmqAbIVS3YxYY88jgQ</td>
-      <td>4</td>
-      <td>It was really good my only issue is that they ...</td>
-      <td>0</td>
-      <td>ZyM7HTlB0Lj0ik8uSPtvxw</td>
-    </tr>
-    <tr>
-      <th>4736869</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-10-02</td>
-      <td>0</td>
-      <td>TTrycA5Ytaj_hkTWm9cP-A</td>
-      <td>5</td>
-      <td>Ramen was delicious. Teriyaki was fresh and fl...</td>
-      <td>0</td>
-      <td>6NlUuoTeWNgNqwpGqk3LrQ</td>
-    </tr>
-    <tr>
-      <th>4736870</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>1</td>
-      <td>2016-08-08</td>
-      <td>0</td>
-      <td>CX5K3fY0f2X7fzi0w1qDTA</td>
-      <td>4</td>
-      <td>I ordered a Tonkotsu ramen, wonton chips and a...</td>
-      <td>1</td>
-      <td>CGpH6vTg8iYd8NA8acIBPw</td>
-    </tr>
-    <tr>
-      <th>4736871</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-05-30</td>
-      <td>0</td>
-      <td>xVKQUkhWIPKevs7ZVdn0ew</td>
-      <td>4</td>
-      <td>Went on a Thursday night.\nThick noodle, tonko...</td>
-      <td>1</td>
-      <td>_7PfR6Tvh2xTbiVi1GELoQ</td>
-    </tr>
-    <tr>
-      <th>4736872</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>1</td>
-      <td>2016-09-12</td>
-      <td>1</td>
-      <td>OnlrVLcCQG03jyQf_bgvPw</td>
-      <td>3</td>
-      <td>This place looks cool but the food and service...</td>
-      <td>1</td>
-      <td>7VsihmrVZJzUSL_VqjEfzA</td>
-    </tr>
-    <tr>
-      <th>4736873</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-05-31</td>
-      <td>0</td>
-      <td>46D_tk-OIQS-jt3U8vN0pg</td>
-      <td>3</td>
-      <td>It's a cute spot to check out. Their corn was ...</td>
-      <td>0</td>
-      <td>w1uEa7272-ZXdiTm0aDM8A</td>
-    </tr>
-    <tr>
-      <th>4736874</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-04-13</td>
-      <td>0</td>
-      <td>tmHCOLqAyiHtwDQlGTV9fQ</td>
-      <td>2</td>
-      <td>If you are downtown this is the only ramen pla...</td>
-      <td>0</td>
-      <td>Ijl7OMSDs5MiOhniXDnzcg</td>
-    </tr>
-    <tr>
-      <th>4736875</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>1</td>
-      <td>2016-08-14</td>
-      <td>0</td>
-      <td>SSID6mEYfbvvJFV-oZUW-g</td>
-      <td>3</td>
-      <td>Standard ramen. Great way of naming dishes. Cu...</td>
-      <td>1</td>
-      <td>NKxB1Kyov0CsWtxaLQNzHA</td>
-    </tr>
-    <tr>
-      <th>4736876</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-09-18</td>
-      <td>0</td>
-      <td>Bp3ZajPim_ASkLxVZeaG-Q</td>
-      <td>4</td>
-      <td>Ramen was good. Ambiance very hip. Service was...</td>
-      <td>0</td>
-      <td>TKlFGjkZ5nIR2FqAkgOeIw</td>
-    </tr>
-    <tr>
-      <th>4736877</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-05-21</td>
-      <td>1</td>
-      <td>idyG-T6t6OHyvk3BOA42lw</td>
-      <td>4</td>
-      <td>Pleasantly cozy but modern... Good food and se...</td>
-      <td>0</td>
-      <td>LBDgOSBTPU68MQnxfZirlw</td>
-    </tr>
-    <tr>
-      <th>4736878</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-02-02</td>
-      <td>0</td>
-      <td>4orEKdk9f3EwZb9pMKj_Qw</td>
-      <td>5</td>
-      <td>So me and my daughter are ramen addicts and we...</td>
-      <td>0</td>
-      <td>ZtW4ud-A5doXWgM5dOFaIg</td>
-    </tr>
-    <tr>
-      <th>4736879</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>6</td>
-      <td>2015-08-07</td>
-      <td>8</td>
-      <td>5JV4r1KIWerN3JViyMoC8A</td>
-      <td>3</td>
-      <td>For a trendy downtown spot, the food was a bit...</td>
-      <td>11</td>
-      <td>bLbSNkLggFnqwNNzzq-Ijw</td>
-    </tr>
-    <tr>
-      <th>4736880</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-09-17</td>
-      <td>0</td>
-      <td>_b815arWo9HRIwJTQj_F_g</td>
-      <td>5</td>
-      <td>I really like this place. The variety of broth...</td>
-      <td>0</td>
-      <td>eurIEcpGa_tTi1LMWa1pUA</td>
-    </tr>
-    <tr>
-      <th>4736881</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-06-25</td>
-      <td>0</td>
-      <td>KQpaVYToS4-NTAW4CzL3sA</td>
-      <td>5</td>
-      <td>My umpteenth time coming back here! The new Me...</td>
-      <td>0</td>
-      <td>HO-OEQgDzGq3fOK5sQP5Lg</td>
-    </tr>
-    <tr>
-      <th>4736882</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>1</td>
-      <td>2015-09-19</td>
-      <td>0</td>
-      <td>KyyVA_I5rk8oeDA8Se-nyw</td>
-      <td>5</td>
-      <td>Note to self: If I'm vegetarian and order ever...</td>
-      <td>1</td>
-      <td>06o1DmiBoiyxI2q3v2QRbg</td>
-    </tr>
-    <tr>
-      <th>4736883</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-03-20</td>
-      <td>0</td>
-      <td>HHT_Kvtcn3YYw3Vbi55K3Q</td>
-      <td>4</td>
-      <td>Had a party of 8 and had a great experience he...</td>
-      <td>0</td>
-      <td>ewMjaBcblOOYChGj3XWkhA</td>
-    </tr>
-    <tr>
-      <th>4736884</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>2</td>
-      <td>2015-06-29</td>
-      <td>1</td>
-      <td>WxEo3E-7nDzPAwRip828QA</td>
-      <td>5</td>
-      <td>Never had Ramen and Noodles but my friend want...</td>
-      <td>1</td>
-      <td>SGgO8dvXq1GOL58jFtULhA</td>
-    </tr>
-    <tr>
-      <th>4736885</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-09-11</td>
-      <td>0</td>
-      <td>RyWg5rJMd4_QBsItEFXFHA</td>
-      <td>2</td>
-      <td>There are plenty of good Ramen houses in Vegas...</td>
-      <td>0</td>
-      <td>3roAGe7soqSOB5FVIcqO-Q</td>
-    </tr>
-    <tr>
-      <th>4736886</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>1</td>
-      <td>2015-08-30</td>
-      <td>1</td>
-      <td>-Kj48AkzcOz6N6uVMlVe_w</td>
-      <td>4</td>
-      <td>This place reminds me of a ramen house in Waik...</td>
-      <td>3</td>
-      <td>FAjCZoxiGw9HJKueB8YWTg</td>
-    </tr>
-    <tr>
-      <th>4736887</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-01-03</td>
-      <td>0</td>
-      <td>932NZmVXVvZa5UlAet6F-Q</td>
-      <td>4</td>
-      <td>It's interesting concept to eat Japanese ramen...</td>
-      <td>0</td>
-      <td>-Kv9DMBZGQyf2WSKDR7LwA</td>
-    </tr>
-    <tr>
-      <th>4736888</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-09-14</td>
-      <td>0</td>
-      <td>m-4DuIwMOJ0vNdqGrKRGJw</td>
-      <td>5</td>
-      <td>First of all, I love ramen and I live in a cit...</td>
-      <td>0</td>
-      <td>jFCt0lMNjo0obGjVXVHYUg</td>
-    </tr>
-    <tr>
-      <th>4736889</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-02-18</td>
-      <td>0</td>
-      <td>SfkTYkJTwlNHkqbZr3ZOeQ</td>
-      <td>1</td>
-      <td>Have come here every other week since they ope...</td>
-      <td>0</td>
-      <td>dupdGg3JQUkZb4LmSuxhtA</td>
-    </tr>
-    <tr>
-      <th>4736890</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-01-25</td>
-      <td>0</td>
-      <td>o40pVpXb_tH3Z1tcuX1egA</td>
-      <td>4</td>
-      <td>Although my love for ramen still stays with Mo...</td>
-      <td>0</td>
-      <td>VacS9fgNkuZ3gDqDHViKuw</td>
-    </tr>
-    <tr>
-      <th>4736891</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-09-14</td>
-      <td>0</td>
-      <td>TCBD1pxrgJ3yTbQB2Q4NSQ</td>
-      <td>5</td>
-      <td>Loved it. The staff was super friendly, the en...</td>
-      <td>0</td>
-      <td>D7m9IRxlyGSsMeNu6jkGpQ</td>
-    </tr>
-    <tr>
-      <th>4736892</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>2</td>
-      <td>2015-07-19</td>
-      <td>3</td>
-      <td>JRMc2ESqsYYHCMsMlWyx-Q</td>
-      <td>3</td>
-      <td>Downtown LV is trying so hard to be Hipster ce...</td>
-      <td>4</td>
-      <td>cQU8IWVEJYcklBJbW9CzdQ</td>
-    </tr>
-    <tr>
-      <th>4736893</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>2</td>
-      <td>2015-09-07</td>
-      <td>1</td>
-      <td>VW304lsvKZ5KgXHqt_V3wA</td>
-      <td>5</td>
-      <td>After three days of working an anime conventio...</td>
-      <td>4</td>
-      <td>7HOBCw1pTaZU5qcqwwNy3w</td>
-    </tr>
-    <tr>
-      <th>4736894</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-09-10</td>
-      <td>2</td>
-      <td>8gikTIY-HRdGg7FnRNldng</td>
-      <td>2</td>
-      <td>I'll give this place 2-stars as I'm all for su...</td>
-      <td>1</td>
-      <td>Q-ydrhfqmmOxRb38H6mmEQ</td>
-    </tr>
-    <tr>
-      <th>4736895</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2015-04-21</td>
-      <td>0</td>
-      <td>3BCbmgjBhro-RZQUjM0Xxg</td>
-      <td>5</td>
-      <td>The vibe here is awesome. Great art &amp; music. \...</td>
-      <td>1</td>
-      <td>i6KWlHBp3WwnlBACWvrsUw</td>
-    </tr>
-    <tr>
-      <th>4736896</th>
-      <td>iJ4uoZkPNJ39Vfh0HirI3w</td>
-      <td>0</td>
-      <td>2016-06-24</td>
-      <td>0</td>
-      <td>zVqfgEqvIvLDpUc4hjTubw</td>
-      <td>5</td>
-      <td>This place was amazing! It's a little past Fre...</td>
-      <td>0</td>
-      <td>_zMsJzjl6fXHb9mmr1l9Wg</td>
+      <td>265</td>
+      <td>39</td>
+      <td>5.615385</td>
     </tr>
   </tbody>
 </table>
-<p>4736897 rows × 9 columns</p>
 </div>
 </div>
 
