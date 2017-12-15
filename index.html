@@ -11775,7 +11775,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="CMSC-320-Final-Tutorial:-Data-Science-using-Yelp."><center>CMSC 320 Final Tutorial: Data Science using Yelp.</center><a class="anchor-link" href="#CMSC-320-Final-Tutorial:-Data-Science-using-Yelp.">&#182;</a></h1><h3 id="By:-Oren-Nureil,-Michael-Chacham-Tzedek,-and-Yuval-Reiss"><center>By: Oren Nureil, Michael Chacham-Tzedek, and Yuval Reiss</center><a class="anchor-link" href="#By:-Oren-Nureil,-Michael-Chacham-Tzedek,-and-Yuval-Reiss">&#182;</a></h3>
+<h1 id="CMSC-320-Final-Tutorial:-Data-Science-using-Yelp."><center>CMSC 320 Final Tutorial: Data Science using Yelp.</center><a class="anchor-link" href="#CMSC-320-Final-Tutorial:-Data-Science-using-Yelp.">&#182;</a></h1><h3 id="By:-Oren-Nuriel,-Michael-Chacham-Tzedek,-and-Yuval-Reiss"><center>By: Oren Nuriel, Michael Chacham-Tzedek, and Yuval Reiss</center><a class="anchor-link" href="#By:-Oren-Nuriel,-Michael-Chacham-Tzedek,-and-Yuval-Reiss">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11897,6 +11897,16 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are going to be working a lot with pandas, here is a great tutorial about how to work with pandas.
+Link: <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python">https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python</a></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -16064,13 +16074,14 @@ Name: 43464, dtype: object</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Voila, now as you can see, each rating has an equal amount of reviews. Now lets extract more features, we split the data between %20 testing data and %80 training data, as these names imply, the training set is used to train our classifier with the data and the test data is to see how well our classifier preforms. We cannot train on all the data because our goal with using machine learning is to see how well our classifier preforms on unobserved data.</p>
 <h3 id="Feature-Extraction">Feature Extraction<a class="anchor-link" href="#Feature-Extraction">&#182;</a></h3><p>Feature Extraction is when you extract features from a dataset in order to feed the machine learning algorithm with relevant values from the proper domain (Vectors as opposed to words).</p>
+<p>Here we use the Snowball Stemmer from the NLTK package to aquire the stems of the words in the review. You can learn more about stemmers here: <a href="https://pythonspot.com/nltk-stemming/">https://pythonspot.com/nltk-stemming/</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#split the data to train+test sets</span>
@@ -16093,7 +16104,7 @@ Name: 43464, dtype: object</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[65]:</div>
 
 
 
@@ -16112,7 +16123,7 @@ Name: 43464, dtype: object</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We used the NLTK library in order to transform words into their stems or roots. An example of this would be converting the word "liking" to "like", this process is called stemming, and this minimizes our bag or words representation (less words to represent so our feature vector is smaller :) yayy!).</p>
+<p>We used the NLTK library in order to transform words into their stems or roots. An example of this would be converting the word "liking" to "like", this process is called stemming, and this minimizes our bag or words representation (less words to represent so our feature vector is smaller!</p>
 <p>Now we'll extend the count vectorizer of SKLearns library, which counts the appearences of words in reviews, to stems the word and apply a count.</p>
 
 </div>
@@ -16140,7 +16151,7 @@ Name: 43464, dtype: object</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After count vectorizer, we will construct a simple pipeline which takes the review, transforms it using our stemmed count vectorizer, then preforms a TF-IDF transformation on the vector, then finally classifies with SVM, a machine learning algorithm.</p>
-<h3 id="Machine-Learning">Machine Learning<a class="anchor-link" href="#Machine-Learning">&#182;</a></h3><p>Here we fit our model to the data using a Linear SVM machine learning algorithm.</p>
+<h3 id="Machine-Learning">Machine Learning<a class="anchor-link" href="#Machine-Learning">&#182;</a></h3><p>Here we fit our model to the data using a Linear SVM machine learning algorithm. You can learn more about SVM and how to utilize it here: <a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html</a></p>
 
 </div>
 </div>
@@ -16554,6 +16565,22 @@ avg / total       0.62      0.63      0.63    402396
 <h2 id="Credits">Credits<a class="anchor-link" href="#Credits">&#182;</a></h2><p>The Data: Yelp <a href="https://www.yelp.com/dataset">https://www.yelp.com/dataset</a><br>
 The cool Data Lifecycle pictures: Dr. John Dickerson and Dr. Amol Deshpande<br>
 Memes: Google</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Additional-Resources">Additional Resources<a class="anchor-link" href="#Additional-Resources">&#182;</a></h2><p>Scikit: <a href="http://scikit-learn.org/stable/">http://scikit-learn.org/stable/</a> <br>
+NLTK Video Course: <a href="https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/">https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/</a> <br> 
+Pandas: <a href="https://pandas.pydata.org/">https://pandas.pydata.org/</a> <br>
+Numpy: <a href="http://www.numpy.org/">http://www.numpy.org/</a> <br>
+Linear SVM: <a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html</a> <br>
+Seaborn Graphing: <a href="https://seaborn.pydata.org/index.html">https://seaborn.pydata.org/index.html</a> <br>
+Stemmer: <a href="https://pythonspot.com/nltk-stemming/">https://pythonspot.com/nltk-stemming/</a> <br></p>
+<p>Another group of students using same dataset: <a href="https://www.ischool.berkeley.edu/news/2013/students-data-analysis-uncovers-hidden-trends-yelp-reviews">https://www.ischool.berkeley.edu/news/2013/students-data-analysis-uncovers-hidden-trends-yelp-reviews</a> <br></p>
 
 </div>
 </div>
