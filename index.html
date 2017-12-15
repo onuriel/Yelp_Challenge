@@ -16492,10 +16492,10 @@ avg / total       0.62      0.63      0.63    402396
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the binary case(in our case this is evaluated for each label as a separate binary case):<br>
-<b>_tp_</b> is <b>True Positive</b> - instances that are True and the classifier predicted True<br>
-<b>_fp_</b> is <b>False Positive</b> - all the instances that are False and the classifier predicted True<br>
-<b>_fn_</b> is <b>False Negative</b> - all the instances that are False and the classifier predicted False.<br></p>
-<p>The <b>_F-1_</b> score measures the combination of both recall and precision in a single metric, and we would like our classifier to strike a balance between precision and recall.</p>
+<b>tp</b> is <b>True Positive</b> - instances that are True and the classifier predicted True<br>
+<b>fp</b> is <b>False Positive</b> - all the instances that are False and the classifier predicted True<br>
+<b>fn</b> is <b>False Negative</b> - all the instances that are False and the classifier predicted False.<br></p>
+<p>The <b>F-1</b> score measures the combination of both recall and precision in a single metric, and we would like our classifier to strike a balance between precision and recall.</p>
 
 </div>
 </div>
@@ -16504,7 +16504,7 @@ avg / total       0.62      0.63      0.63    402396
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that 1 and 5 ratings are the easiest to predict and we get higher <b>_F-1_</b> scores for them, the neutral ratings are harder to predict and as such, have lower <b>_F-1_</b> scores</p>
+<p>We can see that 1 and 5 ratings are the easiest to predict and we get higher <b>F-1</b> scores for them, the neutral ratings are harder to predict and as such, have lower <b>F-1</b> scores</p>
 
 </div>
 </div>
